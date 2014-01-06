@@ -21,12 +21,12 @@ Changing all files in a directory with a .jpg extension to a .png extension.
 chext -a jpg png
 ```
 
-Recursively changing all index.html files to index.php files.
+Recurse into all subdirectories changing all index.html files to index.php files.
 ```
 chext -r index.html php
 ```
 
-Recursively changing all .html files to .php files.
+Recurse into all subdirectories changing all .html files to .php files.
 ```
 chext -ar html php
 ```
