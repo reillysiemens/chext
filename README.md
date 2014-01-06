@@ -11,6 +11,11 @@ Changing a file called foo.jpg to foo.png.
 chext foo.jpg png
 ```
 
+Changing a file called foo.js to foo.ejs and having chext tell you what it's doing.
+```
+chext -v foo.js ejs
+```
+
 Changing all files in a directory with a .jpg extension to a .png extension.
 ```
 chext -a jpg png
@@ -24,6 +29,11 @@ chext -r index.html php
 Recursively changing all .html files to .php files.
 ```
 chext -ra html php
+```
+
+Recursively changing all .txt files to .md files and having chext tell you what it's doing.
+```
+chext -rav txt md
 ```
 
 Acknowledgements
