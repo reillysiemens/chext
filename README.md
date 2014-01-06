@@ -6,32 +6,32 @@ A simple Bash script for changing file extensions.
 Example Usage
 -------------
 
-Changing a file called foo.jpg to foo.png.
+Change a file called foo.jpg to foo.png.
 ```
 chext foo.jpg png
 ```
 
-Changing a file called foo.js to foo.ejs and having chext tell you what it's doing.
+Change a file called foo.js to foo.ejs with output in verbose mode.
 ```
 chext -v foo.js ejs
 ```
 
-Changing all files in a directory with a .jpg extension to a .png extension.
+Change all files in a directory with a .jpg extension to a .png extension.
 ```
 chext -a jpg png
 ```
 
-Recurse into all subdirectories changing all index.html files to index.php files.
+Recurse into all subdirectories and change all index.html files to index.php files.
 ```
 chext -r index.html php
 ```
 
-Recurse into all subdirectories changing all .html files to .php files.
+Recurse into all subdirectories and change all .html files to .php files.
 ```
 chext -ar html php
 ```
 
-Recursively changing all .txt files to .md files and having chext tell you what it's doing.
+Recurse into all subdirectories and change all .txt files to .md files with output in verbose mode.
 ```
 chext -arv txt md
 ```
