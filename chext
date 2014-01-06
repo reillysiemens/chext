@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for file in *.$1
+do 
+    new_file="`basename $file .$1`.$2"
+    mv $file $new_file
+    echo "chext: $file --> $new_file"
+done
+
