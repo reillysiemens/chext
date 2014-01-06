@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Set our 
+# Set our option variables. 
 ALL=false
 RECURSIVE=false
 VERBOSE=false
 
-# User this in combination with xargs for recursion?
+# Use this in combination with xargs for recursion?
 #echo $*
 
 # Alternatively, some horrible crap like this...
@@ -24,6 +24,8 @@ while getopts ":arv" opt; do
             ;;
         r)
             RECURSIVE=true
+            echo "chext: Recursive functionality not yet implemented"
+            exit 0
             ;;
         v)
             VERBOSE=true
