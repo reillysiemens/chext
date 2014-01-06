@@ -8,7 +8,10 @@ VERBOSE=false
 # Since getopts doesn't support long options we'll roll our own.
 if [ "$1" = "--help" ]; then
     echo -e "Usage: chext [OPTION] FILENAME EXTENSION"\
-            "\n  or:  chext [OPTION] EXTENSION1 EXTENSION2"
+            "\n  or:  chext [OPTION] EXTENSION1 EXTENSION2"\
+            "\n\n  -a\t all, requires two extensions as arguments"\
+            "\n\n  -r\t recursive, executes the functionality of chext in all subdirectories"\
+            "\n\n  -v\t verbose, lists the file(s) being changed by chext"
     exit 0
 fi
 
