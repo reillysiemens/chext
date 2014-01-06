@@ -44,3 +44,4 @@ The following were critical to the development of this script:
 * [http://wiki.bash-hackers.org/howto/getopts_tutorial](http://wiki.bash-hackers.org/howto/getopts_tutorial)
 * [http://stackoverflow.com/questions/12036445/bash-command-line-arguments](http://stackoverflow.com/questions/12036445/bash-command-line-arguments)
 * [http://stackoverflow.com/questions/1224766/how-do-i-rename-the-extension-of-a-batch-of-files](http://stackoverflow.com/questions/1224766/how-do-i-rename-the-extension-of-a-batch-of-files)
+* [http://stackoverflow.com/a/2353307](http://stackoverflow.com/a/2353307)
