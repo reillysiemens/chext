@@ -28,12 +28,12 @@ chext -r index.html php
 
 Recursively changing all .html files to .php files.
 ```
-chext -ra html php
+chext -ar html php
 ```
 
 Recursively changing all .txt files to .md files and having chext tell you what it's doing.
 ```
-chext -rav txt md
+chext -arv txt md
 ```
 
 Acknowledgements
