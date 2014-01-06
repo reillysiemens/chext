@@ -6,14 +6,30 @@ A simple Bash script for changing file extensions.
 Example Usage
 -------------
 
+Changing a file called foo.jpg to foo.png.
+```
+chext foo.jpg png
+```
+
 Changing all files in a directory with a .jpg extension to a .png extension.
 ```
-user@hostname:~$ ls
-bar.jpg foo.jpg
-user@hostname:~$ chext jpg png
-chext: bar.jpg --> bar.png
-chext: foo.jpg --> foo.png
-user@hostname:~$ ls
-bar.png foo.pjg
-user@hostname:~$
+chext -a jpg png
 ```
+
+Recursively changing all index.html files to index.php files.
+```
+chext -r index.html php
+```
+
+Recursively changing all .html files to .php files.
+```
+chext -ra html php
+```
+
+Acknowledgements
+----------------
+
+The following were critical to the development of this script:
+*[http://wiki.bash-hackers.org/howto/getopts_tutorial](http://wiki.bash-hackers.org/howto/getopts_tutorial)
+*[http://stackoverflow.com/questions/12036445/bash-command-line-arguments](http://stackoverflow.com/questions/12036445/bash-command-line-arguments)
+*[http://stackoverflow.com/questions/1224766/how-do-i-rename-the-extension-of-a-batch-of-files](http://stackoverflow.com/questions/1224766/how-do-i-rename-the-extension-of-a-batch-of-files)
