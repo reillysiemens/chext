@@ -16,7 +16,7 @@ if [ "$1" = "--help" ]; then
 fi
 
 # Process optional arguments using getopts.
-while getopts ":arvh" opt; do
+while getopts ":arv" opt; do
     case $opt in
         a)
             ALL=true
@@ -29,13 +29,9 @@ while getopts ":arvh" opt; do
         v)
             VERBOSE=true
             ;;
-        h)
-            echo -e "chext: invalid option -- 'h'"\
-                    "\nTry 'chext --help' for more information." >&2
-            exit 1
-            ;;
         \?)
-            echo "chext: invalid option --'$OPTARG'" >&2
+            echo -e "chext: invalid option --'$OPTARG'"\
+                    "\nTry 'chext --help' for more information." >&2
             exit 1
             ;;
         :)
