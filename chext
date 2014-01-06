@@ -5,36 +5,38 @@ ALL=false
 RECURSIVE=false
 VERBOSE=false
 
-# Use this in combination with xargs for recursion?
-#echo $*
-
-# Alternatively, some horrible crap like this...
-#directories=`ls -p | grep "/"`
-#echo $directories
-
+# Since getopts doesn't support long options we'll roll our own.
 if [ "$1" = "--help" ]; then
-    echo -e "Usage: chext [OPTION] FILENAME EXTENSION\n  or:  chext [OPTION] EXTENSION1 EXTENSION2"
+    echo -e "Usage: chext [OPTION] FILENAME EXTENSION"\
+            "\n  or:  chext [OPTION] EXTENSION1 EXTENSION2"
     exit 0
 fi
 
-while getopts ":arv" opt; do
+# Process optional arguments using getopts.
+while getopts ":arvh" opt; do
     case $opt in
         a)
             ALL=true
             ;;
         r)
             RECURSIVE=true
-            echo "chext: Recursive functionality not yet implemented"
+            echo "chext: recursive functionality not yet implemented"
             exit 0
             ;;
         v)
             VERBOSE=true
             ;;
+        h)
+            echo -e "chext: invalid option -- 'h'"\
+                    "\nTry 'chext --help' for more information." >&2
+            exit 1
+            ;;
         \?)
-            echo "chext: Invalid option: -$OPTARG" >&2
+            echo "chext: invalid option --'$OPTARG'" >&2
+            exit 1
             ;;
         :)
-            echo "chext: Option -$OPTARG requires an argument." >&2
+            echo "chext: option -$OPTARG requires an argument" >&2
             exit 1
             ;;
     esac
@@ -43,10 +45,10 @@ done
 # Shift command line parameters so we can access positional arguments.
 shift $((OPTIND - 1))
 
-
+# Find the basename of the file(s) and the modify extension(s) appropriately.
 if $ALL; then
     for file in *.$1
-    do 
+    do
         new_file="${file%.$1}.$2"
         mv "$file" "$new_file"
         if $VERBOSE; then
@@ -60,4 +62,3 @@ else
         echo "chext: '$1' -> '$new_file'"
     fi
 fi
-
