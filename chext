@@ -1,9 +1,42 @@
 #!/bin/bash
 
-for file in *.$1
-do 
-    new_file="`basename $file .$1`.$2"
-    mv $file $new_file
-    echo "chext: $file --> $new_file"
+ALL=false
+RECURSIVE=false
+VERBOSE=false
+
+while getopts ":rav" opt; do
+    case $opt in
+        a)
+            ALL=true
+            ;;
+        r)
+            RECURSIVE=true
+            ;;
+        v)
+            VERBOSE=true
+            echo "chext: Verbose mode enabled" >&2
+            ;;
+        \?)
+            echo "chext: Invalid option: -$OPTARG" >&2
+            ;;
+        :)
+            echo "chext: Option -$OPTARG requires an argument." >&2
+            exit 1
+            ;;
+    esac
 done
+
+# Shift command line parameters so we can access positional arguments.
+shift $((OPTIND - 1))
+
+if $ALL; then
+    for file in *.$1
+    do 
+        new_file="`basename $file .$1`.$2"
+        mv $file $new_file
+        if $VERBOSE; then
+            echo "chext: $file --> $new_file"
+        fi
+    done
+fi
 
